@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dj7in0mak6w15"
+path="res://.godot/imported/Grass Footsteps.mp3-97591a92c947d40dce8262c76116a048.mp3str"
+
+[deps]
+
+source_file="res://Grass Footsteps.mp3"
+dest_files=["res://.godot/imported/Grass Footsteps.mp3-97591a92c947d40dce8262c76116a048.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

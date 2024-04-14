@@ -1,0 +1,238 @@
+[gd_scene load_steps=15 format=3 uid="uid://1haoe4q6ce3g"]
+
+[ext_resource type="Texture2D" uid="uid://d0e5yupwu2r58" path="res://Lffk1n.jpg" id="1_8f0pb"]
+[ext_resource type="Script" path="res://Mainmenu.gd" id="1_8u2mq"]
+[ext_resource type="Script" path="res://ParallaxBackground.gd" id="1_tc4be"]
+[ext_resource type="Shader" path="res://Mainmenu.gdshader" id="3_8p1oo"]
+[ext_resource type="AudioStream" uid="uid://dhtrrchi37nv8" path="res://Chinatownmusic.mp3" id="3_mypv5"]
+[ext_resource type="Theme" uid="uid://bep85enoxigse" path="res://but.tres" id="3_qhe5d"]
+[ext_resource type="Script" path="res://SAS.gd" id="5_34ffy"]
+[ext_resource type="Script" path="res://Control.gd" id="7_5olkc"]
+[ext_resource type="Theme" uid="uid://b5uk7loc13xqp" path="res://2nd option.tres" id="9_tw13d"]
+[ext_resource type="Texture2D" uid="uid://shejrtkh2iyh" path="res://sharedrop-2024-04-11-13_36_50/Picsart_24-04-11_16-50-42-167.jpg" id="10_l4bdd"]
+[ext_resource type="Texture2D" uid="uid://xl55xkhv047s" path="res://sharedrop-2024-04-11-13_36_50/Picsart_24-04-11_16-54-28-100.jpg" id="11_ubjsa"]
+[ext_resource type="Texture2D" uid="uid://cwltyv61pemxe" path="res://[removal.ai]_277bb8c6-0e56-496d-8765-15dd682c9a65-20240411_164051.png" id="12_wad0p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sq23j"]
+shader = ExtResource("3_8p1oo")
+
+[sub_resource type="Environment" id="Environment_y8fby"]
+background_mode = 3
+ambient_light_source = 2
+ambient_light_color = Color(0.447454, 0.0543145, 7.21961e-08, 1)
+tonemap_exposure = 0.89
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 1.99
+glow_enabled = true
+glow_intensity = 0.54
+glow_strength = 1.65
+glow_mix = 0.071
+glow_blend_mode = 4
+glow_hdr_threshold = 0.62
+glow_hdr_scale = 1.87
+glow_hdr_luminance_cap = 256.0
+glow_map_strength = 1.0
+fog_enabled = true
+fog_light_color = Color(1, 0.0431373, 0, 1)
+fog_light_energy = 16.0
+fog_sun_scatter = 1.0
+fog_density = 1.0
+fog_height = 970.11
+fog_height_density = 0.0021
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_gi_inject = 1.72
+volumetric_fog_ambient_inject = 6.7
+adjustment_enabled = true
+adjustment_contrast = 1.13
+adjustment_saturation = 0.73
+
+[node name="Node2D" type="Node"]
+script = ExtResource("1_8u2mq")
+
+[node name="AUDIO" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tc4be")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AUDIO"]
+stream = ExtResource("3_mypv5")
+autoplay = true
+
+[node name="ParallaxBackground" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tc4be")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ParallaxBackground"]
+script = ExtResource("5_34ffy")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground/ParallaxBackground"]
+texture_filter = 1
+position = Vector2(-12, -39)
+motion_offset = Vector2(1, 0)
+motion_mirroring = Vector2(1463, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_sq23j")
+position = Vector2(414, 609)
+scale = Vector2(2.61778, 1.07083)
+texture = ExtResource("1_8f0pb")
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -4.1698
+offset_top = 142.505
+offset_right = 1995.83
+offset_bottom = 1142.51
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 90.0
+script = ExtResource("7_5olkc")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 4.1698
+offset_top = -121.505
+offset_right = 5.1698
+offset_bottom = -98.505
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 641.17
+offset_top = 49.495
+offset_right = 1403.17
+offset_bottom = 726.495
+alignment = 1
+
+[node name="OPTIONS" type="Button" parent="Control/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("3_qhe5d")
+text = "OPTIONS
+"
+
+[node name="EXIT" type="Button" parent="Control/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("3_qhe5d")
+text = "EXIT
+"
+
+[node name="START" type="Button" parent="Control/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("3_qhe5d")
+text = "START
+"
+
+[node name="MUTE" type="Button" parent="Control"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 891.17
+offset_top = 330.495
+offset_right = 1099.17
+offset_bottom = 408.495
+theme = ExtResource("3_qhe5d")
+text = "MUTE "
+
+[node name="ROGUE" type="Button" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 647.0
+offset_top = 602.0
+offset_right = 847.0
+offset_bottom = 721.0
+theme = ExtResource("3_qhe5d")
+text = "ROGUE"
+
+[node name="PLAY" type="Button" parent="Control"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 1220.17
+offset_top = 603.495
+offset_right = 1431.17
+offset_bottom = 717.495
+theme = ExtResource("3_qhe5d")
+text = "CAREER"
+
+[node name="BACK" type="Button" parent="Control"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+offset_left = 825.17
+offset_top = 761.495
+offset_right = 1201.17
+offset_bottom = 826.495
+theme = ExtResource("3_qhe5d")
+text = "BACK"
+
+[node name="Button" type="Button" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 315.17
+offset_top = 844.495
+offset_right = 1736.17
+offset_bottom = 874.495
+theme = ExtResource("3_qhe5d")
+
+[node name="Button2" type="Button" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 354.17
+offset_top = -84.505
+offset_right = 1775.17
+offset_bottom = -54.505
+theme = ExtResource("3_qhe5d")
+
+[node name="Sprite2D" type="Node2D" parent="."]
+
+[node name="CAREER" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(1314, 497)
+scale = Vector2(0.26482, 0.283017)
+texture = ExtResource("10_l4bdd")
+
+[node name="RONIN" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(732, 511)
+scale = Vector2(0.243316, 0.25994)
+texture = ExtResource("11_ubjsa")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 27.0
+offset_top = 874.0
+offset_right = 597.0
+offset_bottom = 976.0
+tooltip_text = "The current theme song"
+theme = ExtResource("9_tw13d")
+theme_override_colors/font_selected_color = Color(0.54902, 0.0588235, 0.529412, 1)
+theme_override_colors/selection_color = Color(0.72549, 0.27451, 0.113725, 1)
+theme_override_colors/font_shadow_color = Color(0.92549, 0.219608, 0.415686, 1)
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 4
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y8fby")
+
+[node name="[removalai]277Bb8c6-0e56-496d-8765-15Dd682c9a65-20240411164051" type="Sprite2D" parent="."]
+position = Vector2(1056, 231)
+scale = Vector2(2.8756, 1.18)
+texture = ExtResource("12_wad0p")
+
+[connection signal="pressed" from="Control/VBoxContainer/OPTIONS" to="Control" method="_on_options_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/EXIT" to="Control" method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/START" to="Control" method="_on_start_pressed"]
+[connection signal="pressed" from="Control/MUTE" to="Control" method="_on_mute_pressed"]
+[connection signal="pressed" from="Control/ROGUE" to="Control" method="_on_rogue_pressed"]
+[connection signal="pressed" from="Control/BACK" to="Control" method="_on_back_pressed"]

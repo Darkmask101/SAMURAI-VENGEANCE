@@ -1,0 +1,147 @@
+[gd_scene load_steps=18 format=3 uid="uid://bfe1vjewc4dsr"]
+
+[ext_resource type="Texture2D" uid="uid://beplvacwmb10b" path="res://samurai/heavy-attack.png" id="1_8amqo"]
+[ext_resource type="Texture2D" uid="uid://4pii06pdo84g" path="res://samurai/idle.png" id="1_08y46"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymxxh"]
+atlas = ExtResource("1_8amqo")
+region = Rect2(0, 0, 56, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_red76"]
+atlas = ExtResource("1_8amqo")
+region = Rect2(56, 0, 56, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubbao"]
+atlas = ExtResource("1_8amqo")
+region = Rect2(112, 0, 56, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffuah"]
+atlas = ExtResource("1_8amqo")
+region = Rect2(168, 0, 56, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cudpv"]
+atlas = ExtResource("1_8amqo")
+region = Rect2(224, 0, 56, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7ust"]
+atlas = ExtResource("1_8amqo")
+region = Rect2(280, 0, 56, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gdhb"]
+atlas = ExtResource("1_8amqo")
+region = Rect2(336, 0, 56, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfgff"]
+atlas = ExtResource("1_8amqo")
+region = Rect2(392, 0, 56, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3222e"]
+atlas = ExtResource("1_8amqo")
+region = Rect2(448, 0, 56, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p34pf"]
+atlas = ExtResource("1_8amqo")
+region = Rect2(504, 0, 56, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqewq"]
+atlas = ExtResource("1_8amqo")
+region = Rect2(560, 0, 56, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f0u1"]
+atlas = ExtResource("1_08y46")
+region = Rect2(0, 0, 30, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ipjb"]
+atlas = ExtResource("1_08y46")
+region = Rect2(30, 0, 30, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibcf2"]
+atlas = ExtResource("1_08y46")
+region = Rect2(60, 0, 30, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1li0g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymxxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_red76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubbao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffuah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cudpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7ust")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gdhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfgff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3222e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p34pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqewq")
+}],
+"loop": true,
+"name": &"ATTACK1",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7f0u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ipjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibcf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7f0u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ipjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibcf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7f0u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ipjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibcf2")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 6.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-20, 40)
+scale = Vector2(1.16964, 1.05475)
+polygon = PackedVector2Array(420, 230, 441, 187, 471.084, 237.972, 486.473, 244.608, 476, 250, 490, 299, 480, 315, 445, 316, 438, 291, 420, 240)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CollisionPolygon2D"]
+texture_filter = 1
+position = Vector2(462.534, 259.778)
+scale = Vector2(4.76801, 6.00579)
+sprite_frames = SubResource("SpriteFrames_1li0g")
+animation = &"IDLE"
