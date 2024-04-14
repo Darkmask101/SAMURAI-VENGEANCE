@@ -177,24 +177,6 @@ offset_bottom = 826.495
 theme = ExtResource("3_qhe5d")
 text = "BACK"
 
-[node name="Button" type="Button" parent="Control"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 315.17
-offset_top = 844.495
-offset_right = 1736.17
-offset_bottom = 874.495
-theme = ExtResource("3_qhe5d")
-
-[node name="Button2" type="Button" parent="Control"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 354.17
-offset_top = -84.505
-offset_right = 1775.17
-offset_bottom = -54.505
-theme = ExtResource("3_qhe5d")
-
 [node name="Sprite2D" type="Node2D" parent="."]
 
 [node name="CAREER" type="Sprite2D" parent="Sprite2D"]
